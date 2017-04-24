@@ -31,52 +31,52 @@ c = sql_conn.cursor()
 announcementsData = c.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'announcements'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000")
+                         LIMIT 80000")
 d = sql_conn.cursor()
 blogData = d.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'blog'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000") 
+                         LIMIT 80000") 
 e = sql_conn.cursor()
 picsData = e.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'pics'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000")
+                         LIMIT 80000")
 l = sql_conn.cursor()
 funnyData = l.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'funny'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000")            
+                         LIMIT 80000")            
 f = sql_conn.cursor()
 askredditData = f.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'AskReddit'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000")
+                         LIMIT 80000")
 g = sql_conn.cursor()
 scienceData = g.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'science'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000") 
+                         LIMIT 80000") 
 h = sql_conn.cursor()
 wtfData = h.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'WTF'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000") 
+                         LIMIT 80000") 
 i = sql_conn.cursor()
 politicsData = i.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'politics'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000")
+                         LIMIT 80000")
 j = sql_conn.cursor()
 worldnewsData = j.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'worldnews'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000") 
+                         LIMIT 80000") 
 k = sql_conn.cursor()
 technologyData = k.execute("SELECT body FROM May2015\
                          WHERE subreddit = 'technology'\
                          AND LENGTH(body) > 25\
-                         LIMIT 1000") 
+                         LIMIT 80000") 
 # MAKE SURE order of FinalData matches FinalSubs so the plot doesn't get disorganized.
 
 FinalData = sentianalyze(announcementsData.fetchall()), sentianalyze(blogData.fetchall()), sentianalyze(picsData.fetchall()), sentianalyze(funnyData.fetchall()), sentianalyze(askredditData.fetchall()), sentianalyze(scienceData.fetchall()), sentianalyze(wtfData.fetchall()), sentianalyze(politicsData.fetchall()), sentianalyze(worldnewsData.fetchall()), sentianalyze(technologyData.fetchall())
